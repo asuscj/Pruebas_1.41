@@ -14,7 +14,15 @@
    {
       var _loc2_ = Stage.scaleMode;
       Stage.scaleMode = "noScale";
-      var _loc3_ = "0";
+      var _loc3_;
+      if (this.api.electron.isEnabled())
+      {
+        _loc3_ = "2";
+    }
+    else
+    {
+        _loc3_ = "0";
+    }
       this.aks.send("Ir" + Stage.width + ";" + Stage.height + ";" + _loc3_);
       Stage.scaleMode = _loc2_;
    }

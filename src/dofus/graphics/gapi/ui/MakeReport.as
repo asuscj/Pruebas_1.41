@@ -1,4 +1,4 @@
-class dofus.graphics.gapi.ui.MakeReport extends dofus.graphics.gapi.core.DofusAdvancedComponent
+﻿class dofus.graphics.gapi.ui.MakeReport extends dofus.graphics.gapi.core.DofusAdvancedComponent
 {
    var _bAllAccounts;
    var _bhReport;
