@@ -1,4 +1,4 @@
-﻿class dofus.aks.Items extends dofus.aks.Handler
+class dofus.aks.Items extends dofus.aks.Handler
 {
    var api;
    static var EFFECT_APPEND_CHAR = ":";
@@ -181,6 +181,7 @@
                break;
             case "E":
                this.api.kernel.showMessage(undefined,this.api.lang.getText("CANT_DROP_ITEM"),"ERROR_BOX");
+               break;
             default:
                return;
          }
@@ -210,6 +211,7 @@
                break;
             case "A":
                this.api.kernel.showMessage(undefined,this.api.lang.getText("ALREADY_EQUIPED"),"ERROR_BOX",{name:"Already"});
+               break;
             default:
                return;
          }
@@ -218,7 +220,8 @@
       {
          _loc4_ = sExtraData.split("*");
          _loc5_ = 0;
-         while(_loc5_ < _loc4_.length)
+         var _locBreakLoop = false;
+         while(_loc5_ < _loc4_.length && !_locBreakLoop)
          {
             _loc6_ = _loc4_[_loc5_];
             _loc7_ = _loc6_.charAt(0);
@@ -228,39 +231,40 @@
                default:
                   ank.utils.Logger.err("Ajout d\'un type obj inconnu");
                   break;
-                case "O":
-             _loc8_ = _loc6_.split(";");
-             _loc9_ = 0;
-             while(_loc9_ < _loc8_.length) 
-             {
-                 _loc10_ = this.api.kernel.CharactersManager.getItemObjectFromData(_loc8_[_loc9_]);
-                 
-                 if(this.api.datacenter.Basics.aks_exchange_echangeType == 0)
-                 {
-                     _loc11_ = this.api.datacenter.Temporary.Shop.inventory;
-                     _loc12_ = 0;
-                     while(_loc12_ < _loc11_.length)
+               case "O":
+                  _loc8_ = _loc6_.split(";");
+                  _loc9_ = 0;
+                  while(_loc9_ < _loc8_.length)
+                  {
+                     _loc10_ = this.api.kernel.CharactersManager.getItemObjectFromData(_loc8_[_loc9_]);
+                     if(this.api.datacenter.Basics.aks_exchange_echangeType == 0)
                      {
-                         _loc13_ = _loc11_[_loc12_];
-                         if(_loc13_.hasCustomResellCustomPrice)
-                         {
-                             if(_loc10_.unicID == _loc13_.unicID)
-                             {
+                        _loc11_ = this.api.datacenter.Temporary.Shop.inventory;
+                        _loc12_ = 0;
+                        while(_loc12_ < _loc11_.length)
+                        {
+                           _loc13_ = _loc11_[_loc12_];
+                           if(_loc13_.hasCustomResellCustomPrice)
+                           {
+                              if(_loc10_.unicID == _loc13_.unicID)
+                              {
                                  _loc10_.resellCustomPrice = _loc13_.resellCustomPrice;
                                  _loc10_.customMoneyItemId = _loc13_.customMoneyItemId;
-                             }
-                         }
-                         _loc12_ = _loc12_ + 1;
+                              }
+                           }
+                           _loc12_ = _loc12_ + 1;
+                        }
                      }
-                 }
-                 if(_loc10_ != undefined)
-                 {
-                     this.api.datacenter.Player.addItem(_loc10_);
-                 }
-                 _loc9_ = _loc9_ + 1;
-             }
-             break;
+                     if(_loc10_ != undefined)
+                     {
+                        this.api.datacenter.Player.addItem(_loc10_);
+                     }
+                     _loc9_ = _loc9_ + 1;
+                  }
+                  break;
                case "G":
+                  // Implementación del case G (si es necesario)
+                  break;
             }
             _loc5_ = _loc5_ + 1;
          }
@@ -394,6 +398,7 @@
             _loc15_ = {name:"UseItem",listener:this,params:{objectID:_loc11_,spriteID:_loc12_,cellID:_loc13_}};
             _loc16_ = new dofus.datacenter.Item(-1,_loc14_,1,0,"",0);
             this.api.kernel.showMessage(undefined,this.api.lang.getText("ITEM_USE_CONFIRMATION",[_loc16_.name]),"CAUTION_YESNO",_loc15_);
+            break;
          default:
             return;
       }
@@ -429,6 +434,7 @@
             break;
          case "AskYesNoUseItem":
             this.use(oEvent.params.objectID,oEvent.params.spriteID,oEvent.params.cellID,true);
+            break;
          default:
             return;
       }

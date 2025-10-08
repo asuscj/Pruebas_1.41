@@ -1,4 +1,4 @@
-﻿class dofus.graphics.gapi.ui.Temporis extends dofus.graphics.gapi.core.DofusAdvancedComponent
+class dofus.graphics.gapi.ui.Temporis extends dofus.graphics.gapi.core.DofusAdvancedComponent
 {
    var _aTemporisComponents;
    var _btnClose;
@@ -130,8 +130,7 @@
       this._mcTabViewer.removeMovieClip();
       this.api.datacenter.Temporis.lastTab = this._sCurrentTab;
       var _loc2_ = this._aTemporisComponents[Number(this._sCurrentTab.substr(-1))];
-      var _loc0_;
-      (_loc0_ = this._sCurrentTab);
+      var _loc0_ = this._sCurrentTab;
       if(_loc2_ == "Temporis_ItemUpgrader" && dofus.Constants.TRIPLEFRAMERATE)
       {
          _loc2_ += "_TripleFramerate";

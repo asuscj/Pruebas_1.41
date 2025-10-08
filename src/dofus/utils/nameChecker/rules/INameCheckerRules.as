@@ -10,10 +10,4 @@ interface dofus.utils.nameChecker.rules.INameCheckerRules
    function getCharAllowingUppercase():Array;
    function getIfCannotEndWithUppercase():Boolean;
    function getStrictlyEqualsProhibedWords():Array;
-   function getContainingProhibedWords():Array;
-   function getBeginningProhibedWords():Array;
-   function getEndingProhibedWords():Array;
-   function getMinimumVowelsCount():Number;
-   function getMinimumConsonantsCount():Number;
-   function getMaxRepetitionForOneChar():Number;
 }

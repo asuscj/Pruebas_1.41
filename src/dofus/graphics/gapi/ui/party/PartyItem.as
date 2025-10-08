@@ -1,4 +1,4 @@
-﻿class dofus.graphics.gapi.ui.party.PartyItem extends dofus.graphics.gapi.core.DofusAdvancedComponent
+class dofus.graphics.gapi.ui.party.PartyItem extends dofus.graphics.gapi.core.DofusAdvancedComponent
 {
    var _bIsFollowing;
    var _bIsInGroup;
@@ -42,10 +42,10 @@
    {
       return this._bIsLeader;
    }
-   function get isInGroup():Boolean
-	{
-   return this._bIsInGroup;
-	}
+   function get isInGroup()
+   {
+      return this._bIsInGroup;
+   }
    function setHealth(oSprite)
    {
       if(oSprite.life == undefined)

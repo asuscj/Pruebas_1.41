@@ -1,19 +1,13 @@
-﻿import dofus.utils.criterions.ICriterion;
-import dofus.utils.criterions.basicCriterion.BasicCriterionEpisod;
-import dofus.utils.criterions.subareaCriterion.SubareaCriterionAlignment;
-
 class dofus.utils.criterions.CriterionManager
 {
    static var MAIN_TYPE_AREA = "A";
    static var TYPE_AREA_ALIGNMENT = "A";
    static var MAIN_TYPE_BASIC = "B";
    static var TYPE_BASIC_EPISOD = "E";
-   
    function CriterionManager()
    {
    }
-   
-   static function fillingCriterions(sCriterions):Boolean
+   static function fillingCriterions(sCriterions)
    {
       var _loc3_ = sCriterions.split("|");
       var _loc4_ = 0;
@@ -46,15 +40,14 @@ class dofus.utils.criterions.CriterionManager
       }
       return false;
    }
-   
-   static function parseCriterion(sCriterion):ICriterion
+   static function parseCriterion(sCriterion)
    {
       var _loc3_ = sCriterion.charAt(0);
       var _loc4_ = sCriterion.charAt(1);
       var _loc5_ = sCriterion.charAt(2);
       var _loc6_ = sCriterion.substring(3);
       var _loc0_;
-      var _loc7_:ICriterion;
+      var _loc7_;
       switch(_loc3_)
       {
          case dofus.utils.criterions.CriterionManager.MAIN_TYPE_AREA:
@@ -62,14 +55,14 @@ class dofus.utils.criterions.CriterionManager
             {
                break;
             }
-            _loc7_ = new SubareaCriterionAlignment(_loc5_,Number(_loc6_));
+            _loc7_ = new dofus.utils.criterions.subareaCriterion.SubareaCriterionAlignment(_loc5_,Number(_loc6_));
             break;
          case dofus.utils.criterions.CriterionManager.MAIN_TYPE_BASIC:
             if((_loc0_ = _loc4_) !== dofus.utils.criterions.CriterionManager.TYPE_BASIC_EPISOD)
             {
                break;
             }
-            _loc7_ = new BasicCriterionEpisod(_loc5_,Number(_loc6_));
+            _loc7_ = new dofus.utils.criterions.basicCriterion.BasicCriterionEpisod(_loc5_,Number(_loc6_));
       }
       if(_loc7_ == null || !_loc7_.check())
       {

@@ -1,19 +1,17 @@
-﻿class dofus.utils.criterions.subareaCriterion.SubareaCriterionAlignment extends dofus.utils.ApiElement implements dofus.utils.criterions.ICriterion
+class dofus.utils.criterions.subareaCriterion.SubareaCriterionAlignment extends dofus.utils.ApiElement implements dofus.utils.criterions.ICriterion
 {
    var _aSubarea;
    var _nAlignmentIndex;
    var _sOperator;
    var api;
-
    function SubareaCriterionAlignment(sOperator, nAlignmentIndex)
    {
       super();
       this._sOperator = sOperator;
       this._nAlignmentIndex = nAlignmentIndex;
-      this._aSubarea = dofus.datacenter.Subarea(this.api.datacenter.Subareas.getItemAt(this.api.datacenter.Map.subarea));
+      this._aSubarea = new dofus.datacenter.Subarea(this.api.datacenter.Map.subarea, 0);
    }
-
-   function isFilled():Boolean
+   function isFilled()
    {
       var _loc2_ = this._aSubarea.alignment;
       switch(this._sOperator)
@@ -26,9 +24,12 @@
             return false;
       }
    }
-
-   function check():Boolean
+   function check()
    {
       return "=!".indexOf(this._sOperator) > -1;
+   }
+   function checkCriterion(api):Boolean
+   {
+      return this.isFilled();
    }
 }

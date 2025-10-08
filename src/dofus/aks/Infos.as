@@ -1,4 +1,4 @@
-﻿class dofus.aks.Infos extends dofus.aks.Handler
+class dofus.aks.Infos extends dofus.aks.Handler
 {
    var addToQueue;
    var api;
@@ -15,14 +15,15 @@
       var _loc2_ = Stage.scaleMode;
       Stage.scaleMode = "noScale";
       var _loc3_;
-      if (this.api.electron.isEnabled())
+      // Stage.displayState no existe en AS2, usar alternativa
+      if(_root._currentframe != undefined)
       {
-        _loc3_ = "2";
-    }
-    else
-    {
-        _loc3_ = "0";
-    }
+         _loc3_ = "0"; // normal
+      }
+      else
+      {
+         _loc3_ = "1"; // fullscreen (aproximación)
+      }
       this.aks.send("Ir" + Stage.width + ";" + Stage.height + ";" + _loc3_);
       Stage.scaleMode = _loc2_;
    }

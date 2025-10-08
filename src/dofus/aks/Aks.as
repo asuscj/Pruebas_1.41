@@ -53,6 +53,7 @@ class dofus.aks.Aks extends dofus.utils.ApiElement
    var _sDebug;
    var _sDisconnectionParams;
    var _xSocket;
+   var api;
    static var EVALUATE_AVERAGE_PING_ON_COMMANDS = 50;
    var _bConnected = false;
    var _bConnecting = false;

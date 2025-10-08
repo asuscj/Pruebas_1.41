@@ -1,4 +1,4 @@
-﻿class dofus.graphics.gapi.ui.MakeReport extends dofus.graphics.gapi.core.DofusAdvancedComponent
+class dofus.graphics.gapi.ui.MakeReport extends dofus.graphics.gapi.core.DofusAdvancedComponent
 {
    var _bAllAccounts;
    var _bhReport;
@@ -199,27 +199,27 @@
       this._taPenal._visible = _loc4_;
       this._nCurrentView = nView;
    }
-   function makeReport()
+   function submitReport()
    {
       if(!this.api.electron.enabled)
       {
          this.api.kernel.showMessage(undefined,"This feature is not compatible on a Flash Projector","ERROR_CHAT");
-         return undefined;
+         return;
       }
       if(this._sTargetPseudos == undefined || this._sTargetPseudos.length < 1)
       {
          this.api.kernel.showMessage(undefined,"Target(s) cannot be empty","ERROR_CHAT");
-         return undefined;
+         return;
       }
       if(this._sReason == undefined || this._sReason.length < 1)
       {
          this.api.kernel.showMessage(undefined,"Reason cannot be empty","ERROR_CHAT");
-         return undefined;
+         return;
       }
       if(this._sPenal == undefined || this._sPenal.length < 1)
       {
          this.api.kernel.showMessage(undefined,"Penal cannot be empty","ERROR_CHAT");
-         return undefined;
+         return;
       }
       var _loc2_ = this.api.datacenter.Temporary.Report;
       var _loc3_ = _loc2_.targetAccountPseudo;
@@ -400,7 +400,7 @@
       switch(oEvent.target._name)
       {
          case "AskYesNoMakeReport":
-            this.makeReport();
+            this.submitReport();
             break;
          case "AskYesNoCloseWindow":
             this.unloadThis();

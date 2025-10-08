@@ -1,4 +1,4 @@
-﻿class ank.battlefield.datacenter.Sprite extends Object
+class ank.battlefield.datacenter.Sprite extends Object
 {
    var _aAccessories;
    var _bClear;
@@ -205,16 +205,13 @@
    {
       this._bIsInvisibleInFight = bIsInvisibleInFight;
    }
-    function get isHidden():Boolean
+   function get isHidden()
    {
       return this._bHidden;
    }
-   function set isHidden(value:Boolean)
+   function set isHidden(value)
    {
-      this._bHidden = value;
-      if (this.mc != undefined) {
-         this.mc._visible = !this._bHidden;
-      }
+      this.mc.isHidden = this._bHidden = value;
    }
    function get isInMove()
    {

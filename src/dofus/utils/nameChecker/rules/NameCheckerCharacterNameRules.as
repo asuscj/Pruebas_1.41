@@ -1,4 +1,4 @@
-﻿class dofus.utils.nameChecker.rules.NameCheckerCharacterNameRules extends dofus.utils.ApiElement implements dofus.utils.nameChecker.rules.INameCheckerRules
+class dofus.utils.nameChecker.rules.NameCheckerCharacterNameRules extends dofus.utils.ApiElement implements dofus.utils.nameChecker.rules.INameCheckerRules
 {
    var api;
    var MIN_NAME_LENGTH = 2;
@@ -61,7 +61,7 @@
    {
       return this.PROHIBED_WORDS_STRICTLY_EQUAL;
    }
-   function getContainingProhibedWords():Array
+   function getContainingProhibedWords()
    {
       var _loc2_ = [];
       var _loc3_ = 0;
@@ -82,23 +82,23 @@
       _loc2_.push("DROP");
       return _loc2_;
    }
-   function getBeginningProhibedWords():Array
+   function getBeginningProhibedWords()
    {
       return this.PROHIBED_WORDS_ON_BEGINNING;
    }
-   function getEndingProhibedWords():Array
+   function getEndingProhibedWords()
    {
       return this.PROHIBED_WORDS_ON_ENDING;
    }
-   function getMinimumVowelsCount():Number
+   function getMinimumVowelsCount()
    {
       return this.AT_LEAST_X_VOWELS;
    }
-   function getMinimumConsonantsCount():Number
+   function getMinimumConsonantsCount()
    {
       return this.AT_LEAST_X_CONSONANTS;
    }
-   function getMaxRepetitionForOneChar():Number
+   function getMaxRepetitionForOneChar()
    {
       return this.REPETING_CHAR_MAX;
    }

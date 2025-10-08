@@ -1,6 +1,4 @@
-class dofus.graphics.gapi.controls.inventoryviewer.IInventoryFilter
+interface dofus.graphics.gapi.controls.inventoryviewer.IInventoryFilter
 {
-   function IInventoryFilter()
-   {
-   }
+   function isItemListed(item):Boolean;
 }

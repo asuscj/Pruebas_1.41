@@ -1,4 +1,4 @@
-﻿class dofus.datacenter.PlayableCharacter extends ank.battlefield.datacenter.Sprite
+class dofus.datacenter.PlayableCharacter extends ank.battlefield.datacenter.Sprite
 {
    var CharacteristicsManager;
    var EffectsManager;
@@ -276,15 +276,14 @@
    {
       return dofus.Constants.ARTWORKS_BIG_PATH + this.gfxFileName + ".swf";
    }
-   function set isSummoned(bIsSummoned:Boolean)
-	{
-   this._summoned = bIsSummoned;
-	}
-
-	function get isSummoned():Boolean
-	{
-   return this._summoned;
-	}
+   function set isSummoned(bIsSummoned)
+   {
+      this._summoned = bIsSummoned;
+   }
+   function get isSummoned()
+   {
+      return this._summoned;
+   }
    function set pvpGain(nPvpGain)
    {
       this._nPvpGain = nPvpGain;

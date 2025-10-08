@@ -153,7 +153,8 @@ class dofus.graphics.gapi.ui.gameresult.GameResultPlayerLight extends ank.gapi.c
       {
          return this._sXP;
       }
-      this._sXP = new ank.utils.ExtendedString(this._oItems.xp).addMiddleChar(this.api.lang.getConfigText("THOUSAND_SEPARATOR"),3) + " / " + new ank.utils.ExtendedString(this._oItems.level != 200 ? this._oItems.maxxp : -1).addMiddleChar(this.api.lang.getConfigText("THOUSAND_SEPARATOR"),3) + " <b>" + this.api.lang.getText("WORD_XP") + "</b>\n\n" + this.api.lang.getText("NEXT_LEVEL") + " " + this.api.kernel.Console.getCurrentPercent() + "\n" + this.api.lang.getText("REQUIRED") + " " + new ank.utils.ExtendedString(this.api.datacenter.Player.XPhigh - this.api.datacenter.Player.XP).addMiddleChar(" ",3) + "\n" + this.api.lang.getText("WORD_XP") + " " + this.api.lang.getText("XP_GUILD") + " : " + this._sGuildXP + "\n" + this.api.lang.getText("WORD_XP") + " " + this.api.lang.getText("XP_MOUNT") + " : " + this._sMountXP;
+      this._sXP = new ank.utils.ExtendedString(this._oItems.xp).addMiddleChar(this.api.lang.getConfigText("THOUSAND_SEPARATOR"),3) + " / " + new ank.utils.ExtendedString(this._oItems.level != 200 ? this._oItems.maxxp : -1).addMiddleChar(this.api.lang.getConfigText("THOUSAND_SEPARATOR"),3) + " <b>" + this.api.lang.getText("WORD_XP") + "</b>\n\n" + this.api.lang.getText("NEXT_LEVEL") + " " + this.api.kernel.Console.getCurrentPercent() + "\n" + this.api.lang.getText("REQUIRED") + " " + new ank.utils.ExtendedString(this.api.datacenter
+      .Player.XPhigh - this.api.datacenter.Player.XP).addMiddleChar(" ",3) + "\n" + this.api.lang.getText("WORD_XP") + " " + this.api.lang.getText("XP_GUILD") + " : " + this._sGuildXP + "\n" + this.api.lang.getText("WORD_XP") + " " + this.api.lang.getText("XP_MOUNT") + " : " + this._sMountXP;
       return this._sXP;
    }
 }

@@ -15,29 +15,22 @@ class ank.battlefield.LoadManager extends MovieClip
       this.initialize(mc);
    }
    function processLoad()
-{
-    var i= 0;
-    while (i < ank.battlefield.LoadManager._aMovieClipLoader.length)
-    {
-        // Comprueba si ya alcanzó el límite de cargas
-        if (this.waitingRequest >= ank.battlefield.LoadManager.MAX_PARALLELE_LOAD)
-        {
-            // Si es así, dejamos de buscar más archivos para cargar
-            break;
-        }
-        
-        // Si hay espacio, comprobamos si el archivo actual está en espera
-        var oFile = ank.battlefield.LoadManager._aMovieClipLoader[i];
-        if (oFile.state == ank.battlefield.LoadManager.STATE_WAITING)
-        {
-            // Si lo está, iniciamos su carga
-            oFile.state = ank.battlefield.LoadManager.STATE_LOADING;
-            oFile.loader.loadClip(oFile.file, oFile.container);
-        }
-        
-        i++;
-    }
-}
+   {
+      var _loc2_ = 0;
+      while(_loc2_ < ank.battlefield.LoadManager._aMovieClipLoader.length)
+      {
+         if(this.waitingRequest > ank.battlefield.LoadManager.MAX_PARALLELE_LOAD)
+         {
+            return undefined;
+         }
+         if(ank.battlefield.LoadManager._aMovieClipLoader[_loc2_].state == ank.battlefield.LoadManager.STATE_WAITING)
+         {
+            ank.battlefield.LoadManager._aMovieClipLoader[_loc2_].state = ank.battlefield.LoadManager.STATE_LOADING;
+            ank.battlefield.LoadManager._aMovieClipLoader[_loc2_].loader.loadClip(ank.battlefield.LoadManager._aMovieClipLoader[_loc2_].file,ank.battlefield.LoadManager._aMovieClipLoader[_loc2_].container);
+         }
+         _loc2_ = _loc2_ + 1;
+      }
+   }
    function getFileByMc(mc)
    {
       var _loc3_ = 0;

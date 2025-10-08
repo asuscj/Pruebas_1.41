@@ -1,4 +1,4 @@
-﻿class dofus.utils.nameChecker.rules.NameCheckerGuildNameRules implements dofus.utils.nameChecker.rules.INameCheckerRules
+class dofus.utils.nameChecker.rules.NameCheckerGuildNameRules implements dofus.utils.nameChecker.rules.INameCheckerRules
 {
    var MIN_NAME_LENGTH = 2;
    var MAX_NAME_LENGTH = 30;
@@ -62,27 +62,27 @@
    {
       return this.PROHIBED_WORDS_STRICTLY_EQUAL;
    }
-   function getContainingProhibedWords():Array
+   function getContainingProhibedWords()
    {
       return this.PROHIBED_WORDS_INSIDE;
    }
-   function getBeginningProhibedWords():Array
+   function getBeginningProhibedWords()
    {
       return this.PROHIBED_WORDS_ON_BEGINNING;
    }
-   function getEndingProhibedWords():Array
+   function getEndingProhibedWords()
    {
       return this.PROHIBED_WORDS_ON_ENDING;
    }
-   function getMinimumVowelsCount():Number
+   function getMinimumVowelsCount()
    {
       return this.AT_LEAST_X_VOWELS;
    }
-   function getMinimumConsonantsCount():Number
+   function getMinimumConsonantsCount()
    {
       return this.AT_LEAST_X_CONSONANTS;
    }
-   function getMaxRepetitionForOneChar():Number
+   function getMaxRepetitionForOneChar()
    {
       return this.REPETING_CHAR_MAX;
    }

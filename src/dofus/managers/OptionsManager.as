@@ -1,25 +1,27 @@
-﻿class dofus.managers.OptionsManager extends dofus.utils.ApiElement
+class dofus.managers.OptionsManager extends dofus.utils.ApiElement
 {
    var _so;
    var api;
    var dispatchEvent;
    static var DISPLAY_STYLE_WIDESCREEN_PANELS = "widescreenpanels";
-   static var DEFAULT_VALUES = {loaded:true,Grid:false,Transparency:false,SpriteInfos:true,SpriteMove:true,MapInfos:true,AutoHideSmileys:false,StringCourse:true,ColorfulTactic:true,PointsOverHead:true,ChatEffects:true,CreaturesMode:50,Buff:true,GuildMessageSound:false,BannerShortcuts:true,StartTurnSound:true,TipsOnStart:true,DisplayStyle:"normal",DebugSizeIndex:0,ServerPortIndex:0,MovableBar:false,ViewAllMonsterInGroup:true,MovableBarSize:5,ShortcutSet:1,ShortcutSetDefault:1,CharacterPreview:true,MapFilters:[0,1,1,1,1,1,1],Aura:true,AudioMusicVol:60,AudioEffectVol:100,AudioEnvVol:60,AudioMusicMute:false,AudioEffectMute:false,AudioEnvMute:false,FloatingTipsCoord:null,DisplayingFreshTips:true,CensorshipFilter:true,BigStoreSellFilter:false,RememberAccountName:false,LastAccountNameUsed:"",DefaultQuality:"high",ConquestFilter:-2,FightGroupAutoLock:false,BannerIllustrationMode:"artwork",BannerGaugeMode:"xp",AskForWrongCraft:true,AdvancedLineOfSight:true,RemindTurnTime:true,HideSpellBar:false,SeeAllSpell:true,UseSpeakingItems:true,ConfirmDropItem:true,TimestampInChat:true,ViewDicesDammages:false,AnonymousGameEvents:false,NightMode:true,SeeDamagesColor:true,RemasteredSpellIconsPack:1,EnableWidescreenPanels:true,chatReplacementPanel:dofus.graphics.gapi.ui.chat.ChatReplacementPanelsManager.MINIMAP,UseLightEndFightUI:false,RegroupDamage:true,StylePoint:1,ViewHPAsBar:true,AnimateHPBar:true};
+   static var DEFAULT_VALUES = null;
    static var OPTION_SPELL_PACK_REMASTERED = 1;
    static var OPTION_SPELL_PACK_CONTRAST = 2;
    static var OPTION_SPELL_PACK_CLASSIC = 3;
    static var _sSelf = null;
-   private static var _initializer:Boolean = dofus.managers.OptionsManager.initializeDefaults();
-   public static function initializeDefaults():Boolean {
-      dofus.managers.OptionsManager.DEFAULT_VALUES.FloatingTipsCoord = new com.ankamagames.types.Point(415, 30);
-        return true;
-    }
-
    function OptionsManager(oAPI)
    {
       super();
+      if(dofus.managers.OptionsManager.DEFAULT_VALUES == null)
+      {
+         dofus.managers.OptionsManager.initializeDefaults();
+      }
       dofus.managers.OptionsManager._sSelf = this;
       this.initialize(oAPI);
+   }
+   static function initializeDefaults()
+   {
+      dofus.managers.OptionsManager.DEFAULT_VALUES = {loaded:true,Grid:false,Transparency:false,SpriteInfos:true,SpriteMove:true,MapInfos:true,AutoHideSmileys:false,StringCourse:true,ColorfulTactic:true,PointsOverHead:true,ChatEffects:true,CreaturesMode:50,Buff:true,GuildMessageSound:false,BannerShortcuts:true,StartTurnSound:true,TipsOnStart:true,DisplayStyle:"normal",DebugSizeIndex:0,ServerPortIndex:0,MovableBar:false,ViewAllMonsterInGroup:true,MovableBarSize:5,ShortcutSet:1,ShortcutSetDefault:1,CharacterPreview:true,MapFilters:[0,1,1,1,1,1,1],Aura:true,AudioMusicVol:60,AudioEffectVol:100,AudioEnvVol:60,AudioMusicMute:false,AudioEffectMute:false,AudioEnvMute:false,FloatingTipsCoord:new com.ankamagames.types.Point(415,30),DisplayingFreshTips:true,CensorshipFilter:true,BigStoreSellFilter:false,RememberAccountName:false,LastAccountNameUsed:"",DefaultQuality:"high",ConquestFilter:-2,FightGroupAutoLock:false,BannerIllustrationMode:"artwork",BannerGaugeMode:"xp",AskForWrongCraft:true,AdvancedLineOfSight:true,RemindTurnTime:true,HideSpellBar:false,SeeAllSpell:true,UseSpeakingItems:true,ConfirmDropItem:true,TimestampInChat:true,ViewDicesDammages:false,AnonymousGameEvents:false,NightMode:true,SeeDamagesColor:true,RemasteredSpellIconsPack:1,EnableWidescreenPanels:true,chatReplacementPanel:dofus.graphics.gapi.ui.chat.ChatReplacementPanelsManager.MINIMAP,UseLightEndFightUI:false,RegroupDamage:true,StylePoint:1,ViewHPAsBar:true,AnimateHPBar:true};
    }
    static function getInstance()
    {

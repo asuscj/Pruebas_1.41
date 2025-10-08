@@ -1,4 +1,4 @@
-﻿class dofus.graphics.gapi.controls.MouseShortcuts extends dofus.graphics.gapi.core.DofusAdvancedComponent
+class dofus.graphics.gapi.controls.MouseShortcuts extends dofus.graphics.gapi.core.DofusAdvancedComponent
 {
    var _btnTabItems;
    var _btnTabSpells;
@@ -330,7 +330,6 @@
                this.setMovieClipTransform(_loc3_.content,dofus.Constants.INACTIVE_TRANSFORM);
                _loc3_.showLabel = true;
                _loc3_.label = _loc5_.params[0];
-			   break
             default:
                return;
          }
@@ -778,8 +777,7 @@
    }
    function drop(oEvent)
    {
-      var _loc0_;
-      (_loc0_ = oEvent.target);
+      var _loc0_ = oEvent.target;
       var _loc3_;
       var _loc4_;
       var _loc5_;

@@ -39,6 +39,7 @@ class dofus.graphics.gapi.ui.Banner extends dofus.graphics.gapi.core.DofusAdvanc
    var _sCurrentCircleXtra;
    var _txtConsole;
    var addToQueue;
+   var api;
    var attachMovie;
    var gapi;
    var getNextHighestDepth;
@@ -1337,7 +1338,8 @@ class dofus.graphics.gapi.ui.Banner extends dofus.graphics.gapi.core.DofusAdvanc
             this.gapi.showTooltip(this.api.lang.getText("YOUR_GUILD"),oEvent.target,-20,{bXLimit:true,bYLimit:false});
             break;
          case "_btnStatsJob":
-            this.api.datacenter.Player.Level != 200 ? this.gapi.showTooltip(this.api.lang.getText("YOUR_STATS_JOB") + "\n\n" + this.api.lang.getText("NEXT_LEVEL") + " " + this.api.kernel.Console.getCurrentPercent() + "\n" + this.api.lang.getText("REQUIRED") + " " + new ank.utils.ExtendedString(this.api.datacenter.Player.XPhigh - this.api.datacenter.Player.XP).addMiddleChar(" ",3) + " " + this.api.lang.getText("WORD_XP"),oEvent.target,-54,{bXLimit:true,bYLimit:false}) : this.gapi.showTooltip(this.api.lang.getText("YOUR_STATS_JOB"),oEvent.target,-20,{bXLimit:true,bYLimit:false});
+            this.api.datacenter.Player.Level != 200 ? this.gapi.showTooltip(this.api.lang.getText("YOUR_STATS_JOB") + "\n\n" + this.api.lang.getText("NEXT_LEVEL") + " " + this.api.kernel.Console.getCurrentPercent() + "\n" + this.api.lang.getText("REQUIRED") + " " + new ank.utils.ExtendedString(this.api.datacenter.Player.XPhigh - this.api.datacenter.Player.XP).addMiddleChar(" ",3) + " " + this.api.lang.getText("WORD_XP"),oEvent.target,-54,{bXLimit:true,bYLimit:false}) : this.gapi.showTooltip(this.api.lang.getText("YOUR_STATS_JOB")
+            ,oEvent.target,-20,{bXLimit:true,bYLimit:false});
             break;
          case "_btnSpells":
             this.gapi.showTooltip(this.api.lang.getText("YOUR_SPELLS"),oEvent.target,-20,{bXLimit:true,bYLimit:false});

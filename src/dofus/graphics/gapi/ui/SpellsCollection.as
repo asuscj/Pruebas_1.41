@@ -83,7 +83,6 @@ class dofus.graphics.gapi.ui.SpellsCollection extends dofus.graphics.gapi.core.D
    var _tiSearch;
    var _tiToLevel;
    var addToQueue;
-   var api;
    var attachMovie;
    var gapi;
    var getNextHighestDepth;

@@ -930,7 +930,8 @@ class dofus.datacenter.Item extends Object
    }
    static function canBeExo(nEffectID)
    {
-      return nEffectID != dofus.datacenter.Item.OBJECT_ACTION_LINK_CHARACTER && (nEffectID != dofus.datacenter.Item.OBJECT_ACTION_CUSTOM_SKIN && (nEffectID != dofus.datacenter.Item.OBJECT_ACTION_GIVE_AURA && (nEffectID != dofus.datacenter.Item.OBJECT_ACTION_GIVE_TITLE && (nEffectID != dofus.datacenter.Item.OBJECT_ACTION_LEARN_EMOTICON && (nEffectID != dofus.datacenter.Item.OBJECT_ACTION_LINK_ACCOUNT && (nEffectID != dofus.datacenter.Item.OBJECT_ACTION_LAST_MEAL && (nEffectID != dofus.datacenter.Item.OBJECT_ACTION_FM_BY_CHARACTER && (nEffectID != dofus.datacenter.Item.OBJECT_ACTION_CRAFTED_BY_CHARACTER && (nEffectID != dofus.datacenter.Item.OBJECT_ACTION_LOCK && nEffectID != dofus.datacenter.Item.OBJECT_ACTION_LOCK_TEMPORARY)))))))));
+      return nEffectID != dofus.datacenter.Item.OBJECT_ACTION_LINK_CHARACTER && (nEffectID != dofus.datacenter.Item.OBJECT_ACTION_CUSTOM_SKIN && (nEffectID != dofus.datacenter.Item.OBJECT_ACTION_GIVE_AURA && (nEffectID != dofus.datacenter.Item.OBJECT_ACTION_GIVE_TITLE && (nEffectID != dofus.datacenter.Item.OBJECT_ACTION_LEARN_EMOTICON && (nEffectID != dofus.datacenter.Item.OBJECT_ACTION_LINK_ACCOUNT && (nEffectID != dofus.datacenter.Item.OBJECT_ACTION_LAST_MEAL && (nEffectID != dofus.datacenter.Item.OBJECT_ACTION_FM_BY_CHARACTER && (nEffectID != dofus
+      .datacenter.Item.OBJECT_ACTION_CRAFTED_BY_CHARACTER && (nEffectID != dofus.datacenter.Item.OBJECT_ACTION_LOCK && nEffectID != dofus.datacenter.Item.OBJECT_ACTION_LOCK_TEMPORARY)))))))));
    }
    static function isOver(oEffect, nMinValue, nMaxValue)
    {

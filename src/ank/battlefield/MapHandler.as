@@ -1,4 +1,4 @@
-﻿class ank.battlefield.MapHandler
+class ank.battlefield.MapHandler
 {
    var _mcBattlefield;
    var _mcContainer;
@@ -12,16 +12,14 @@
    static var OBJECT_TYPE_OBJECT1 = 3;
    static var OBJECT_TYPE_OBJECT2 = 4;
    static var TIME_BEFORE_AJUSTING_MAP = 500;
-   var _oLoadingCells:Object;
-   var _oSettingFrames:Object;
+   var _oLoadingCells = {};
+   var _oSettingFrames = {};
    var _mclLoader;
    var _nMaxMapRender = 1;
    var _bShowingFightCells = false;
    var _bTacticMode = false;
    function MapHandler(b, c, d)
    {
-      this._oLoadingCells = {};
-      this._oSettingFrames = {};
       this._mclLoader = new MovieClipLoader();
       if(b != undefined)
       {

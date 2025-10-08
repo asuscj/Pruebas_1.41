@@ -1,4 +1,4 @@
-﻿class dofus.graphics.gapi.ui.bigstore.BigStoreSellFilter extends dofus.graphics.gapi.controls.inventoryviewer.IInventoryFilter
+class dofus.graphics.gapi.ui.bigstore.BigStoreSellFilter implements dofus.graphics.gapi.controls.inventoryviewer.IInventoryFilter
 {
    var _nMaximalLevel = null;
    var _aAllowedTypes = null;
@@ -7,7 +7,7 @@
       this._nMaximalLevel = maximalLevel;
       this._aAllowedTypes = allowedTypes;
    }
-   function isItemListed(item)
+   function isItemListed(item):Boolean
    {
       if(!item.canBeExchange)
       {

@@ -1,4 +1,4 @@
-﻿class dofus.datacenter.Alignment extends com.ankamagames.interfaces.IComparable
+class dofus.datacenter.Alignment implements com.ankamagames.interfaces.IComparable
 {
    var _nIndex;
    var _nValue;
@@ -66,7 +66,7 @@
    {
       return new dofus.datacenter.Alignment(this._nIndex,this._nValue);
    }
-   function compareTo(obj)
+   function compareTo(obj):Number
    {
       var _loc3_ = dofus.datacenter.Alignment(obj);
       if(_loc3_.index == this._nIndex)

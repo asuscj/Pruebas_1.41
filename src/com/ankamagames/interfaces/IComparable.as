@@ -1,6 +1,4 @@
-class com.ankamagames.interfaces.IComparable
+interface com.ankamagames.interfaces.IComparable
 {
-   function IComparable()
-   {
-   }
+   function compareTo(o):Number;
 }

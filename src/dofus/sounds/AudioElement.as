@@ -1,4 +1,4 @@
-﻿class dofus.sounds.AudioElement extends Sound implements com.ankamagames.interfaces.IDisposable
+class dofus.sounds.AudioElement extends Sound implements com.ankamagames.interfaces.IDisposable
 {
    var _bLoaded;
    var _bLoading;
@@ -20,7 +20,6 @@
    function AudioElement(uniqID, file, linkedClip, streaming)
    {
       super(linkedClip);
-
       if(uniqID == undefined)
       {
          return;
@@ -33,7 +32,7 @@
       {
          return;
       }
-     this._nUniqID = uniqID;
+      this._nUniqID = uniqID;
       this._mcLinkedClip = linkedClip;
       this._sFile = file;
       this._bStreaming = streaming == undefined ? false : streaming;

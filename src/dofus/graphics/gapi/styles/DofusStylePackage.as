@@ -1,4 +1,4 @@
-﻿class dofus.graphics.gapi.styles.DofusStylePackage extends Object
+class dofus.graphics.gapi.styles.DofusStylePackage extends Object
 {
    static var ScrollBar = {sbarrowbgcolor:10447155,sbarrowcolor:16777215,sbthumbcolor:4139540,sbtrackcolor:10447155};
    static var ItemSetToolTip = {font:"_sans",embedfonts:false,size:10,color:16692022,bold:false,italic:false,bgcolor:0,bgalpha:70};
@@ -86,7 +86,7 @@
    static var BlueMapHintCheckButton = {bordercolor:11840653,bgcolor:26367,highlightcolor:0,borderdowncolor:11840653,bgdowncolor:26367,highlightdowncolor:0};
    static var BeigeMapHintCheckButton = {bordercolor:11840653,bgcolor:15920610,highlightcolor:0,borderdowncolor:11840653,bgdowncolor:15920610,highlightdowncolor:0};
    static var VioletMapHintCheckButton = {bordercolor:11840653,bgcolor:6724044,highlightcolor:0,borderdowncolor:11840653,bgdowncolor:6724044,highlightdowncolor:0};
-   static var YellowMapHintCheckButton = {bordercolor:11840653,bgcolor:16776960,highlightcolor:0,bgdowncolor:16776960,highlightdowncolor:0};
+   static var YellowMapHintCheckButton = {bordercolor:11840653,bgcolor:16776960,highlightcolor:0,bordercolor:11840653,bgdowncolor:16776960,highlightdowncolor:0};
    static var OrangeMapHintCheckButton = {bordercolor:11840653,bgcolor:16750848,highlightcolor:0,borderdowncolor:11840653,bgdowncolor:16750848,highlightdowncolor:0};
    static var WhiteCheckButton = {bordercolor:5327420,bgcolor:16777215,highlightcolor:0,borderdowncolor:5327420,bgdowncolor:16777215,highlightdowncolor:0,disabledtransform:{ra:70,rb:0,ga:70,gb:0,ba:70,bb:0}};
    static var LightBrownCheckButton = {bordercolor:5327420,bgcolor:11840653,highlightcolor:0,borderdowncolor:5327420,bgdowncolor:11840653,highlightdowncolor:0,disabledtransform:{ra:70,rb:0,ga:70,gb:0,ba:70,bb:0}};
@@ -310,12 +310,13 @@
    static var SkinDurabilityNormalProgressBar = {bgcolor:11840653,upcolor:10036853};
    static var SkinDurabilityCriticalProgressBar = {bgcolor:11840653,upcolor:16711680};
    static var LightBrownProgressBar = {bgcolor:14012330,upcolor:16737792,uberupcolor:16756480};
-	static var TtgProgressBarFoil = {bgcolor:0, upcolor:0};
-	static var TtgProgressBarRarity1 = {bgcolor:0, upcolor:13294474};
-	static var TtgProgressBarRarity2 = {bgcolor:0, upcolor:13140660};
-	static var TtgProgressBarRarity3 = {bgcolor:0, upcolor:251508350};
-	static var TtgProgressBarRarity4 = {bgcolor:0, upcolor:15678515};
-	static var TemporisProgressBar = {bgcolor:0, upcolor:16755725};
+   static var TtgProgressBar = {bgcolor:6182470,upcolor:16741657,uberupcolor:16758054};
+   static var TtgProgressBarFoil = null;
+   static var TtgProgressBarRarity1 = null;
+   static var TtgProgressBarRarity2 = null;
+   static var TtgProgressBarRarity3 = null;
+   static var TtgProgressBarRarity4 = null;
+   static var TemporisProgressBar = null;
    static var BrownPopupMenu = {bordercolor:16777215,backgroundcolor:5327420,foregroundcolor:14012330,itembgcolor:14012330,itemovercolor:16737792,itemstaticbgcolor:5327420,labelstaticstyle:"LightBrownLeftPixelLabel",labelenabledstyle:"BrownLeftPixelLabel",labeldisabledstyle:"GreyBrownLeftPixelLabel"};
    static var OrangeVolumeSlider = {oncolor:16737792,offcolor:11840653};
    static var OrangeChrono = {bgcolor:16737792};
@@ -379,21 +380,21 @@
    static var RegisterLeftComboBox = {labelstyle:"BrownLeftSmallLabel",buttonstyle:"OrangeButton",liststyle:"ComboBoxRegisterList",listbordercolor:10392448,bgcolor:15066081,bordercolor:10392448,highlightcolor:15066081};
    static var ConsoleLogger = {font:"_sans",embedfonts:false,size:12};
    static var DofusFps = {labelstyle:"WhiteCenterSmallLabel",backalpha:50,backcolor:0};
-   private static var _initializer:Boolean = dofus.graphics.gapi.styles.DofusStylePackage.initialize();
-   public static function initialize():Boolean {
-		var dsp = dofus.graphics.gapi.styles.DofusStylePackage;
-		dsp.TtgProgressBarFoil.bgcolor = dsp.TtgProgressBar.bgcolor;
-		dsp.TtgProgressBarFoil.upcolor = dsp.TtgProgressBar.uberupcolor;
-		dsp.TtgProgressBarRarity1.bgcolor = dsp.TtgProgressBar.bgcolor;
-		dsp.TtgProgressBarRarity2.bgcolor = dsp.TtgProgressBar.bgcolor;
-		dsp.TtgProgressBarRarity3.bgcolor = dsp.TtgProgressBar.bgcolor;
-		dsp.TtgProgressBarRarity4.bgcolor = dsp.TtgProgressBar.bgcolor;
-		dsp.TemporisProgressBar.bgcolor = dsp.BrownProgressBar.bgcolor;
-      dsp.YellowMapHintCheckButton.borderdowncolor = 11840653;
-      return true;
-	}
    function DofusStylePackage()
    {
       super();
+      if(dofus.graphics.gapi.styles.DofusStylePackage.TtgProgressBarFoil == null)
+      {
+         dofus.graphics.gapi.styles.DofusStylePackage.initializeStaticVariables();
+      }
+   }
+   static function initializeStaticVariables()
+   {
+      dofus.graphics.gapi.styles.DofusStylePackage.TtgProgressBarFoil = {bgcolor:dofus.graphics.gapi.styles.DofusStylePackage.TtgProgressBar.bgcolor,upcolor:dofus.graphics.gapi.styles.DofusStylePackage.TtgProgressBar.uberupcolor};
+      dofus.graphics.gapi.styles.DofusStylePackage.TtgProgressBarRarity1 = {bgcolor:dofus.graphics.gapi.styles.DofusStylePackage.TtgProgressBar.bgcolor,upcolor:13294474};
+      dofus.graphics.gapi.styles.DofusStylePackage.TtgProgressBarRarity2 = {bgcolor:dofus.graphics.gapi.styles.DofusStylePackage.TtgProgressBar.bgcolor,upcolor:13140660};
+      dofus.graphics.gapi.styles.DofusStylePackage.TtgProgressBarRarity3 = {bgcolor:dofus.graphics.gapi.styles.DofusStylePackage.TtgProgressBar.bgcolor,upcolor:251508350};
+      dofus.graphics.gapi.styles.DofusStylePackage.TtgProgressBarRarity4 = {bgcolor:dofus.graphics.gapi.styles.DofusStylePackage.TtgProgressBar.bgcolor,upcolor:15678515};
+      dofus.graphics.gapi.styles.DofusStylePackage.TemporisProgressBar = {bgcolor:dofus.graphics.gapi.styles.DofusStylePackage.BrownProgressBar.bgcolor,upcolor:16755725};
    }
 }
